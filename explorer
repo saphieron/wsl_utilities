@@ -1,0 +1,8 @@
+command="/mnt/c/Windows/explorer.exe"
+if [ ! -z "$1" -a "$1" != " " ];then
+	arg=$(realpath "$1")
+	arg=$(wslpath -w $arg)
+	command="${command} ${arg}"
+fi
+
+${command}
